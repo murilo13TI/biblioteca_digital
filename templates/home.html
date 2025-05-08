@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Biblioteca Digital</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Bem-vindo à Biblioteca Digital</h1>
+        <nav>
+            <a href="{{ url_for('home') }}">🏠 Home</a>
+            <a href="{{ url_for('listar_livros') }}">📚 Livros</a>
+            <a href="{{ url_for('adicionar') }}">➕ Adicionar Livro</a>
+        </nav>
+    </header>
+    <main class="container">
+        <h2>Explore, empreste e gerencie seus livros com facilidade.</h2>
+        <p class="p">explore o mundo dos livros, lendos e apreciando em nossa biblioteca digital.</p>
+    </main>
+    <section>
+    &copy;todos os direitos reservados a bibliotecadigital.com.br
+    </section>
+</body>
+</html>

@@ -1,0 +1,179 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* FONTE */
+body {
+    font-family: 'Segoe UI', 'Open Sans', sans-serif;
+    background-color: #f2f4f8;
+    color: #333;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* HEADER */
+header {
+    background: #1c2b36;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    font-size: 2.2em;
+    margin-bottom: 5px;
+}
+
+nav {
+    margin-top: 10px;
+}
+
+nav a {
+    color: #cbd6e2;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #ffffff;
+}
+
+
+
+.container {
+    max-width: 960px;
+    margin: 40px auto;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+/* TÍTULOS */
+h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 1.8em;
+    color: #1c2b36;
+}
+
+.p {
+    text-align: center;
+}
+
+section &copy {
+    text-align: center;
+    background-color: lightblue;
+    margin-button: 1px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 14px;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+th {
+    background-color: #f0f4f8;
+    color: #2c3e50;
+    font-size: 1em;
+}
+
+td a {
+    margin-right: 10px;
+    color: #1c7ed6;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+td a:hover {
+    color: #0b5ed7;
+}
+
+span.multa {
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+/* FORMULÁRIO */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input[type="text"], textarea {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1em;
+    width: 100%;
+}
+
+button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    background-color: #1c7ed6;
+    color: white;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0b5ed7;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+    .container {
+        margin: 20px;
+        padding: 20px;
+    }
+
+    nav a {
+        display: block;
+        margin: 5px 0;
+    }
+
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+
+    tr {
+        margin-bottom: 15px;
+    }
+
+    td {
+        padding-left: 50%;
+        position: relative;
+    }
+
+    td::before {
+        position: absolute;
+        top: 14px;
+        left: 14px;
+        width: 45%;
+        white-space: nowrap;
+        font-weight: bold;
+    }
+
+    td:nth-of-type(1)::before { content: "Título"; }
+    td:nth-of-type(2)::before { content: "Autor"; }
+    td:nth-of-type(3)::before { content: "Status"; }
+    td:nth-of-type(4)::before { content: "Ações"; }
+}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% if livro %}Editar{% else %}Adicionar{% endif %} Livro</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>{% if livro %}Editar{% else %}Adicionar{% endif %} Livro</h1>
+        <nav>
+            <a href="{{ url_for('home') }}">Home</a>
+            <a href="{{ url_for('listar_livros') }}">📚 Livros</a>
+        </nav>
+    </header>
+    <main class="container">
+        <form method="POST">
+            <label for="titulo">Título:</label>
+            <input type="text" name="titulo" id="titulo" value="{{ livro.titulo if livro else '' }}" required>
+
+            <label for="autor">Autor:</label>
+            <input type="text" name="autor" id="autor" value="{{ livro.autor if livro else '' }}" required>
+
+            <button type="submit">Salvar</button>
+        </form>
+    </main>
+</body>
+</html>

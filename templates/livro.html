@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de Livros</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Lista de Livros</h1>
+        <nav>
+            <a href="{{ url_for('home') }}">Home</a>
+            <a href="{{ url_for('adicionar') }}">➕ Adicionar Livro</a>
+        </nav>
+    </header>
+    <main class="container">
+        <table>
+            <tr>
+                <th>Título</th>
+                <th>Autor</th>
+                <th>Status</th>
+                <th>Ações</th>
+            </tr>
+            {% for livro in livros %}
+            <tr>
+                <td>{{ livro.titulo }}</td>
+                <td>{{ livro.autor }}</td>
+                <td>
+                    {% if livro.emprestado %}
+                        Emprestado até {{ livro.data_devolucao }}
+                    {% else %}
+                        Disponível
+                    {% endif %}
+                </td>
+                <td>
+                    <a href="{{ url_for('editar', id=livro.id) }}">✏️</a>
+                    <a href="{{ url_for('excluir', id=livro.id) }}">🗑️</a>
+                    {% if not livro.emprestado %}
+                        <a href="{{ url_for('emprestar', id=livro.id) }}">📚 Emprestar</a>
+                    {% else %}
+                        <a href="{{ url_for('devolver', id=livro.id) }}">📤 Devolver</a>
+                        {% if livro.multa > 0 %}
+                            <br><span style="color:red;">Multa: R$ {{ livro.multa }}</span>
+                        {% endif %}
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </main>
+</body>
+</html>
