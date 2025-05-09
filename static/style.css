@@ -67,10 +67,12 @@ h2 {
     text-align: center;
 }
 
-section &copy {
+.& {
     text-align: center;
     background-color: lightblue;
-    margin-button: 1px;
+    margin-top: 10%;
+    text-align: center;
+    color: midnightblue;
 }
 
 table {
